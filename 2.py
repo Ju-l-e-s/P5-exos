@@ -1,4 +1,4 @@
-def display_student_grades(students):
+def display_student_grades(students:dict):
     """
     Display the grades and average of a specified student from a dictionary of students.
 

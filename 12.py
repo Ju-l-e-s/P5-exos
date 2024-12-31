@@ -78,11 +78,12 @@ class Library:
         :return: None
         :rtype: None
         """
-        for book in self.books:
-            if book.title == book_title:
-                self.books.remove(book)
-                self.borrowed_books.append(book)
-                return
+        if book_title not in self.borrowed_books:
+            for book in self.books:
+                if book.title == book_title:
+                    self.books.remove(book)
+                    self.borrowed_books.append(book)
+                    return
         print(f"Le livre '{book_title}' n'est pas disponible à l'emprunt.")
 
     def return_book(self, book_title):
